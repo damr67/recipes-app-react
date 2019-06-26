@@ -21,8 +21,10 @@ const Recipes = () => {
 
     const handleSearch = e => {
         e.preventDefault();
-        fetchRecipes();
-        setSearchText('');
+        if(searchText!==''){
+            fetchRecipes();
+            setSearchText('');
+        }
     };
 
     if(loading){
